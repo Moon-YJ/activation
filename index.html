@@ -29,9 +29,13 @@
     _blank: 새탭이 열리면서 링크 이동
   -->
   <!-- <a href="https://www.naver.com" target="_self">네이버</a> -->
+  <!-- DOM요소의 속성값 제어 -->
   <a href="#">init</a>
   <a href="#">init</a>
   <a href="#">init</a>
+
+  <!-- 동적으로 DOM 생성 -->
+  <nav></nav>
 
   <script>
     // DOM요소의 속성값 제어
@@ -62,6 +66,26 @@
         aTags[i].setAttribute('target', data.target);
         aTags[i].innerText = data.name;
       */
+
+      // 동적으로 DOM 생성
+      /*
+        - 방법 1: innerHTML 사용해서 문자열로 직접 동적 태그 생성 (선택자의 기존 자식 내용을 없애면서 덮어쓰기)
+        - 방법 2: 
+      */
+      const nav = document.querySelector('nav');
+      // 특정 부모요소안에 반복적인 DOM요소를 동적 생성하기 위해서는
+      // 문자열을 초기화하는 변수를 만든 후, += 활용해서 반복 추가할 태그를 문자열 형태로 쌓음
+      let tags = '';
+      info.forEach((el, idx) => {
+        tags += `<a href="${el.url}" target="${el.target}">${el.name}</a>`;
+      });
+      /*
+        tags += `<a href="${info[0].url}" target="${info[0].target}">${info[0].name}</a>`;
+        tags += `<a href="${info[1].url}" target="${info[1].target}">${info[1].name}</a>`
+        tags += `<a href="${info[2].url}" target="${info[2].target}">${info[2].name}</a>`
+      */
+      // 마지막으로 해당 DOM요소에 변수에 있는 반복태그 문자열을 한번에 꽂아넣음
+      nav.innerHTML = tags;
     });
   </script>
 </body>
