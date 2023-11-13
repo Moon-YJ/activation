@@ -1,8 +1,8 @@
 /*
   DOM 안에서 자주 쓰이는 유용한 property
-  - DOM.innerText: 해당 돔에 연결되어있는 text값 호출
-  - DOM.innerHTML: 해당 돔에 연결되어있는 자식 tag 호출
-  - DOM.className: 해당 돔에 연결되어있는 모든 클래스명을 문자열로 호출
+  - DOM.innerText: 해당 돔에 연결되어있는 text값 반환
+  - DOM.innerHTML: 해당 돔에 연결되어있는 자식 tag 반환
+  - DOM.className: 해당 돔에 연결되어있는 모든 클래스명을 문자열로 반환
 */
 
 const main = document.querySelector('main');

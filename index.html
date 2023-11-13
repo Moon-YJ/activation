@@ -23,6 +23,23 @@
       <article>TAB3</article>
     </section>
   </main>
+
+  <!-- 
+    _self: 해당 탭이 변경되면서 링크 이동 
+    _blank: 새탭이 열리면서 링크 이동
+  -->
+  <a href="https://www.naver.com" target="_self">네이버</a>
+  <script>
+    // DOM요소의 속성값 제어
+    // DOM.getAttribute('속성명'): 해당 속성명의 값 반환
+    // DOM.setAttribute('속성명', '변경할 속성값'): 해당 속성명의 값 변경
+    const link = document.querySelector('a');
+    link.getAttribute('href');
+    console.log(link.getAttribute('href'));
+    link.setAttribute('href', 'https://www.nate.com');
+    link.setAttribute('target', '_blank');
+    link.innerText = '네이트';
+  </script>
 </body>
 
 </html>
