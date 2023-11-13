@@ -28,7 +28,11 @@
     _self: 해당 탭이 변경되면서 링크 이동 
     _blank: 새탭이 열리면서 링크 이동
   -->
-  <a href="https://www.naver.com" target="_self">네이버</a>
+  <!-- <a href="https://www.naver.com" target="_self">네이버</a> -->
+  <a href="#">init</a>
+  <a href="#">init</a>
+  <a href="#">init</a>
+
   <script>
     // DOM요소의 속성값 제어
     // DOM.getAttribute('속성명'): 해당 속성명의 값 반환
@@ -39,6 +43,26 @@
     link.setAttribute('href', 'https://www.nate.com');
     link.setAttribute('target', '_blank');
     link.innerText = '네이트';
+
+    // 객체 활용
+    const info = [
+      { url: "https://www.naver.com", target: "_blank", name: "네이버" },
+      { url: "https://www.nate.com", target: "_self", name: "네이트" },
+      { url: "https://www.google.com", target: "_blank", name: "구글" },
+    ]
+    const aTags = document.querySelectorAll('a');
+    info.forEach((data, i) => {
+      //구조분해할당
+      const { url, name, target } = data;
+      aTags[i].setAttribute('href', url);
+      aTags[i].setAttribute('target', target);
+      aTags[i].innerText = name;
+      /*
+        aTags[i].setAttribute('href', data.url);
+        aTags[i].setAttribute('target', data.target);
+        aTags[i].innerText = data.name;
+      */
+    });
   </script>
 </body>
 
